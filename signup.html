@@ -1,435 +1,555 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign Up — Earnora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Create your Earnora account.">
+    <title>Sign Up — Earnora</title>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <meta name="description" content="Create your Earnora account.">
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #050505;
-        color: #ffffff;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-        width: 100%;
-        padding: 18px 7%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #050505;
-        border-bottom: 1px solid #222222;
-    }
-
-    .logo {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 27px;
-        font-weight: 900;
-        letter-spacing: 1px;
-    }
-
-    .logo span {
-        color: #e53935;
-    }
-
-    .home-link {
-        color: #aaaaaa;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .home-link:hover {
-        color: #ffffff;
-    }
-
-    .signup-section {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 50px 20px;
-
-        background:
-            radial-gradient(
-                circle at 25% 25%,
-                rgba(229, 57, 53, 0.10),
-                transparent 30%
-            ),
-            radial-gradient(
-                circle at 75% 70%,
-                rgba(30, 136, 229, 0.10),
-                transparent 30%
-            ),
-            #050505;
-    }
-
-    .signup-box {
-        width: 100%;
-        max-width: 450px;
-        padding: 38px 32px;
-        background: #101010;
-        border: 1px solid #292929;
-        border-radius: 18px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    }
-
-    .signup-title {
-        text-align: center;
-        margin-bottom: 28px;
-    }
-
-    .signup-title h1 {
-        font-size: 30px;
-        margin-bottom: 9px;
-    }
-
-    .signup-title p {
-        color: #8f8f8f;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .form-group {
-        margin-bottom: 17px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        color: #dddddd;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .form-group input {
-        width: 100%;
-        padding: 14px 15px;
-
-        background: #080808;
-        color: #ffffff;
-
-        border: 1px solid #303030;
-        border-radius: 9px;
-
-        outline: none;
-        font-size: 15px;
-    }
-
-    .form-group input:focus {
-        border-color: #1e88e5;
-        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.10);
-    }
-
-    .terms {
-        display: flex;
-        gap: 9px;
-        align-items: flex-start;
-        margin: 8px 0 22px;
-        color: #888888;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    .terms input {
-        margin-top: 3px;
-        accent-color: #e53935;
-    }
-
-    .terms a {
-        color: #4da3ff;
-        text-decoration: none;
-    }
-
-    .signup-button {
-        width: 100%;
-        padding: 14px;
-
-        border: none;
-        border-radius: 9px;
-
-        background: #e53935;
-        color: #ffffff;
-
-        font-size: 15px;
-        font-weight: 700;
-
-        cursor: pointer;
-        transition: 0.2s ease;
-    }
-
-    .signup-button:hover {
-        background: #ff4743;
-        transform: translateY(-1px);
-    }
-
-    .divider {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        margin: 25px 0;
-
-        color: #666666;
-        font-size: 12px;
-    }
-
-    .divider::before,
-    .divider::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #292929;
-    }
-
-    .login-text {
-        text-align: center;
-        color: #888888;
-        font-size: 14px;
-    }
-
-    .login-text a {
-        color: #1e88e5;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .login-text a:hover {
-        color: #5aa9ff;
-    }
-
-    footer {
-        padding: 22px 20px;
-        text-align: center;
-
-        background: #030303;
-        border-top: 1px solid #1b1b1b;
-
-        color: #666666;
-        font-size: 12px;
-    }
-
-    footer strong {
-        color: #ffffff;
-    }
-
-    @media (max-width: 500px) {
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
         header {
-            padding: 16px 5%;
+            width: 100%;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #050505;
+            border-bottom: 1px solid #222222;
         }
 
         .logo {
-            font-size: 23px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e53935;
+        }
+
+        .home-link {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .home-link:hover {
+            color: #ffffff;
+        }
+
+        .signup-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 25% 25%,
+                    rgba(229, 57, 53, 0.10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 75% 70%,
+                    rgba(30, 136, 229, 0.10),
+                    transparent 30%
+                ),
+                #050505;
         }
 
         .signup-box {
-            padding: 30px 22px;
+            width: 100%;
+            max-width: 450px;
+            padding: 38px 32px;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .signup-title {
+            text-align: center;
+            margin-bottom: 28px;
         }
 
         .signup-title h1 {
-            font-size: 27px;
+            font-size: 30px;
+            margin-bottom: 9px;
         }
-    }
-</style>
 
-</head><body><header>
+        .signup-title p {
+            color: #8f8f8f;
+            font-size: 14px;
+            line-height: 1.5;
+        }
 
-    <a href="index.html" class="logo">
-        Earn<span>ora</span>
-    </a>
+        .form-group {
+            margin-bottom: 17px;
+        }
 
-    <a href="index.html" class="home-link">
-        ← Home
-    </a>
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #dddddd;
+            font-size: 14px;
+            font-weight: 600;
+        }
 
-</header>
+        .form-group input {
+            width: 100%;
+            padding: 14px 15px;
+            background: #080808;
+            color: #ffffff;
+            border: 1px solid #303030;
+            border-radius: 9px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-group input:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.10);
+        }
+
+        .terms {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            margin: 8px 0 22px;
+            color: #888888;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .terms input {
+            margin-top: 3px;
+            accent-color: #e53935;
+        }
+
+        .signup-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #e53935;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .signup-button:hover {
+            background: #ff4743;
+        }
+
+        .signup-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .message {
+            display: none;
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            border-radius: 9px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .message.error {
+            display: block;
+            background: rgba(229, 57, 53, 0.10);
+            border: 1px solid rgba(229, 57, 53, 0.35);
+            color: #ff7773;
+        }
+
+        .message.success {
+            display: block;
+            background: rgba(30, 136, 229, 0.10);
+            border: 1px solid rgba(30, 136, 229, 0.35);
+            color: #66b1ff;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 25px 0;
+            color: #666666;
+            font-size: 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #292929;
+        }
+
+        .login-text {
+            text-align: center;
+            color: #888888;
+            font-size: 14px;
+        }
+
+        .login-text a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 22px 20px;
+            text-align: center;
+            background: #030303;
+            border-top: 1px solid #1b1b1b;
+            color: #666666;
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .signup-box {
+                padding: 30px 22px;
+            }
+
+            .signup-title h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html" class="logo">
+            Earn<span>ora</span>
+        </a>
+
+        <a href="index.html" class="home-link">
+            ← Home
+        </a>
+
+    </header>
 
 
-<main class="signup-section">
+    <main class="signup-section">
 
-    <div class="signup-box">
+        <div class="signup-box">
 
-        <div class="signup-title">
+            <div class="signup-title">
 
-            <h1>
-                Create Account
-            </h1>
+                <h1>Create Account</h1>
 
-            <p>
-                Join Earnora and start your rewards journey.
+                <p>
+                    Join Earnora and start your rewards journey.
+                </p>
+
+            </div>
+
+
+            <div id="message" class="message"></div>
+
+
+            <form id="signupForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Enter your password again"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to use Earnora responsibly and follow
+                        the platform's rules.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="signup-button"
+                    id="signupButton"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
             </p>
 
         </div>
 
-
-        <form id="signupForm">
-
-            <div class="form-group">
-
-                <label for="name">
-                    Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    autocomplete="name"
-                    required
-                >
-
-            </div>
+    </main>
 
 
-            <div class="form-group">
+    <footer>
 
-                <label for="email">
-                    Email address
-                </label>
+        © 2026 <strong>Earnora</strong>. All rights reserved.
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                    required
-                >
-
-            </div>
+    </footer>
 
 
-            <div class="form-group">
+    <!-- Supabase JavaScript library -->
 
-                <label for="password">
-                    Password
-                </label>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Create a password"
-                    autocomplete="new-password"
-                    minlength="8"
-                    required
-                >
+    <!-- Earnora authentication -->
 
-            </div>
+    <script src="js/auth.js"></script>
 
 
-            <div class="form-group">
+    <script>
 
-                <label for="confirmPassword">
-                    Confirm password
-                </label>
+        const signupForm =
+            document.getElementById("signupForm");
 
-                <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Enter your password again"
-                    autocomplete="new-password"
-                    minlength="8"
-                    required
-                >
+        const signupButton =
+            document.getElementById("signupButton");
 
-            </div>
+        const message =
+            document.getElementById("message");
 
 
-            <label class="terms">
+        function showMessage(text, type) {
 
-                <input
-                    type="checkbox"
-                    id="terms"
-                    required
-                >
+            message.textContent = text;
 
-                <span>
-                    I agree to use Earnora responsibly and follow
-                    the platform's rules.
-                </span>
-
-            </label>
+            message.className =
+                "message " + type;
+        }
 
 
-            <button
-                type="submit"
-                class="signup-button"
-            >
-                Create Account
-            </button>
+        signupForm.addEventListener(
+            "submit",
+            async function(event) {
 
-        </form>
+                event.preventDefault();
 
+                const name =
+                    document.getElementById("name").value.trim();
 
-        <div class="divider">
-            OR
-        </div>
+                const email =
+                    document.getElementById("email").value.trim();
 
+                const password =
+                    document.getElementById("password").value;
 
-        <p class="login-text">
-
-            Already have an account?
-
-            <a href="login.html">
-                Login
-            </a>
-
-        </p>
-
-    </div>
-
-</main>
+                const confirmPassword =
+                    document.getElementById("confirmPassword").value;
 
 
-<footer>
+                if (password !== confirmPassword) {
 
-    © 2026 <strong>Earnora</strong>. All rights reserved.
+                    showMessage(
+                        "Passwords do not match.",
+                        "error"
+                    );
 
-</footer>
+                    return;
+                }
 
 
-<script>
+                if (password.length < 8) {
 
-    document
-        .getElementById("signupForm")
-        .addEventListener("submit", function(event) {
+                    showMessage(
+                        "Password must be at least 8 characters.",
+                        "error"
+                    );
 
-            event.preventDefault();
+                    return;
+                }
 
-            const password =
-                document.getElementById("password").value;
 
-            const confirmPassword =
-                document.getElementById("confirmPassword").value;
+                signupButton.disabled = true;
 
-            if (password !== confirmPassword) {
+                signupButton.textContent =
+                    "Creating account...";
 
-                alert("Passwords do not match.");
 
-                return;
+                try {
+
+                    const data =
+                        await earnoraSignUp(
+                            name,
+                            email,
+                            password
+                        );
+
+
+                    /*
+                     * Supabase may require email confirmation
+                     * depending on the project's settings.
+                     */
+
+                    if (
+                        data.user &&
+                        data.user.identities &&
+                        data.user.identities.length === 0
+                    ) {
+
+                        showMessage(
+                            "An account with this email already exists.",
+                            "error"
+                        );
+
+                    } else {
+
+                        showMessage(
+                            "Account created successfully! Check your email if verification is required, then log in.",
+                            "success"
+                        );
+
+                        signupForm.reset();
+
+                    }
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    showMessage(
+                        error.message ||
+                        "Something went wrong. Please try again.",
+                        "error"
+                    );
+
+                } finally {
+
+                    signupButton.disabled = false;
+
+                    signupButton.textContent =
+                        "Create Account";
+
+                }
+
             }
+        );
 
-            alert(
-                "The account system will be connected in the next step."
-            );
-
-        });
-
-</script>
+    </script>
 
 </body>
-  </html>
+</html>
