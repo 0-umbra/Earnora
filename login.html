@@ -1,298 +1,228 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login — Earnora</title>
-
-<meta name="description" content="Login to your Earnora account.">
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #050505;
-        color: #ffffff;
-        min-height: 100vh;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* HEADER */
-
-    header {
-        width: 100%;
-        padding: 18px 7%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        background: #050505;
-        border-bottom: 1px solid #222222;
-    }
-
-    .logo {
-        text-decoration: none;
-        color: #ffffff;
-
-        font-size: 27px;
-        font-weight: 900;
-
-        letter-spacing: 1px;
-    }
-
-    .logo span {
-        color: #e53935;
-    }
-
-    .home-link {
-        color: #aaaaaa;
-        text-decoration: none;
-
-        font-size: 14px;
-
-        transition: 0.2s ease;
-    }
-
-    .home-link:hover {
-        color: #ffffff;
-    }
-
-    /* LOGIN AREA */
-
-    .login-section {
-        flex: 1;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        padding: 50px 20px;
-
-        background:
-            radial-gradient(
-                circle at 25% 25%,
-                rgba(229, 57, 53, 0.10),
-                transparent 30%
-            ),
-            radial-gradient(
-                circle at 75% 70%,
-                rgba(30, 136, 229, 0.10),
-                transparent 30%
-            ),
-            #050505;
-    }
-
-    .login-box {
-        width: 100%;
-        max-width: 430px;
-
-        padding: 38px 32px;
-
-        background: #101010;
-
-        border: 1px solid #292929;
-        border-radius: 18px;
-
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    }
-
-    .login-title {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .login-title h1 {
-        font-size: 30px;
-        margin-bottom: 9px;
-    }
-
-    .login-title p {
-        color: #8f8f8f;
-        font-size: 14px;
-    }
-
-    /* FORM */
-
-    .form-group {
-        margin-bottom: 18px;
-    }
-
-    .form-group label {
-        display: block;
-
-        margin-bottom: 8px;
-
-        color: #dddddd;
-
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .form-group input {
-        width: 100%;
-
-        padding: 14px 15px;
-
-        background: #080808;
-        color: #ffffff;
-
-        border: 1px solid #303030;
-        border-radius: 9px;
-
-        outline: none;
-
-        font-size: 15px;
-
-        transition: 0.2s ease;
-    }
-
-    .form-group input:focus {
-        border-color: #1e88e5;
-        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.10);
-    }
-
-    .forgot {
-        display: block;
-
-        text-align: right;
-
-        margin-top: -7px;
-        margin-bottom: 22px;
-
-        color: #4da3ff;
-
-        text-decoration: none;
-
-        font-size: 13px;
-    }
-
-    .forgot:hover {
-        color: #75b9ff;
-    }
-
-    /* LOGIN BUTTON */
-
-    .login-button {
-        width: 100%;
-
-        padding: 14px;
-
-        border: none;
-        border-radius: 9px;
-
-        background: #e53935;
-        color: #ffffff;
-
-        font-size: 15px;
-        font-weight: 700;
-
-        cursor: pointer;
-
-        transition: 0.2s ease;
-    }
-
-    .login-button:hover {
-        background: #ff4743;
-        transform: translateY(-1px);
-    }
-
-    /* DIVIDER */
-
-    .divider {
-        display: flex;
-        align-items: center;
-
-        gap: 12px;
-
-        margin: 25px 0;
-
-        color: #666666;
-
-        font-size: 12px;
-    }
-
-    .divider::before,
-    .divider::after {
-        content: "";
-
-        flex: 1;
-
-        height: 1px;
-
-        background: #292929;
-    }
-
-    /* SIGN UP */
-
-    .signup-text {
-        text-align: center;
-
-        color: #888888;
-
-        font-size: 14px;
-    }
-
-    .signup-text a {
-        color: #1e88e5;
-
-        text-decoration: none;
-
-        font-weight: 600;
-    }
-
-    .signup-text a:hover {
-        color: #5aa9ff;
-    }
-
-    /* FOOTER */
-
-    footer {
-        padding: 22px 20px;
-
-        text-align: center;
-
-        background: #030303;
-
-        border-top: 1px solid #1b1b1b;
-
-        color: #666666;
-
-        font-size: 12px;
-    }
-
-    footer strong {
-        color: #ffffff;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 500px) {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login — Earnora</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
         header {
-            padding: 16px 5%;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
         }
 
         .logo {
-            font-size: 23px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 27px;
+            font-weight: 900;
+        }
+
+        .logo span {
+            color: #e53935;
+        }
+
+        .home-link {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .login-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 25% 25%,
+                    rgba(229,57,53,.10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 75% 70%,
+                    rgba(30,136,229,.10),
+                    transparent 30%
+                ),
+                #050505;
         }
 
         .login-box {
-            padding: 30px 22px;
+            width: 100%;
+            max-width: 440px;
+            padding: 38px 32px;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.45);
         }
 
-        .login-title h1 {
-            font-size: 27px;
+        .title {
+            text-align: center;
+            margin-bottom: 28px;
         }
-    }
-</style>
 
-</head><body><!-- HEADER -->
+        .title h1 {
+            font-size: 30px;
+            margin-bottom: 9px;
+        }
+
+        .title p {
+            color: #8f8f8f;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            background: #080808;
+            color: #fff;
+            border: 1px solid #303030;
+            border-radius: 9px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 0 3px rgba(30,136,229,.10);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #e53935;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background: #ff4743;
+        }
+
+        .login-button:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
+        .message {
+            display: none;
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            border-radius: 9px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .message.error {
+            display: block;
+            background: rgba(229,57,53,.10);
+            border: 1px solid rgba(229,57,53,.35);
+            color: #ff7773;
+        }
+
+        .message.success {
+            display: block;
+            background: rgba(30,136,229,.10);
+            border: 1px solid rgba(30,136,229,.35);
+            color: #66b1ff;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 25px 0;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #292929;
+        }
+
+        .signup-text {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .signup-text a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            background: #030303;
+            border-top: 1px solid #1b1b1b;
+            color: #666;
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        @media (max-width: 500px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .login-box {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
 
 <header>
 
@@ -307,23 +237,22 @@
 </header>
 
 
-<!-- LOGIN -->
-
 <main class="login-section">
 
     <div class="login-box">
 
-        <div class="login-title">
+        <div class="title">
 
-            <h1>
-                Welcome Back
-            </h1>
+            <h1>Welcome Back</h1>
 
             <p>
-                Login to continue to Earnora.
+                Login to continue earning with Earnora.
             </p>
 
         </div>
+
+
+        <div id="message" class="message"></div>
 
 
         <form id="loginForm">
@@ -337,7 +266,6 @@
                 <input
                     type="email"
                     id="email"
-                    name="email"
                     placeholder="you@example.com"
                     autocomplete="email"
                     required
@@ -355,8 +283,7 @@
                 <input
                     type="password"
                     id="password"
-                    name="password"
-                    placeholder="Enter your password"
+                    placeholder="Your password"
                     autocomplete="current-password"
                     required
                 >
@@ -364,14 +291,10 @@
             </div>
 
 
-            <a href="#" class="forgot">
-                Forgot password?
-            </a>
-
-
             <button
                 type="submit"
                 class="login-button"
+                id="loginButton"
             >
                 Login
             </button>
@@ -389,7 +312,7 @@
             Don't have an account?
 
             <a href="signup.html">
-                Create one
+                Create Account
             </a>
 
         </p>
@@ -399,8 +322,6 @@
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
     © 2026 <strong>Earnora</strong>. All rights reserved.
@@ -408,23 +329,99 @@
 </footer>
 
 
-<!-- TEMPORARY FORM BEHAVIOR -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/auth.js"></script>
+
 
 <script>
 
-    document
-        .getElementById("loginForm")
-        .addEventListener("submit", function(event) {
+    const loginForm =
+        document.getElementById("loginForm");
+
+    const loginButton =
+        document.getElementById("loginButton");
+
+    const message =
+        document.getElementById("message");
+
+
+    function showMessage(text, type) {
+
+        message.textContent = text;
+
+        message.className =
+            "message " + type;
+    }
+
+
+    loginForm.addEventListener(
+        "submit",
+        async function(event) {
 
             event.preventDefault();
 
-            alert(
-                "The login system will be connected in the next step."
-            );
+            const email =
+                document.getElementById("email")
+                .value
+                .trim();
 
-        });
+            const password =
+                document.getElementById("password")
+                .value;
+
+
+            loginButton.disabled = true;
+
+            loginButton.textContent =
+                "Logging in...";
+
+
+            try {
+
+                await earnoraLogin(
+                    email,
+                    password
+                );
+
+
+                showMessage(
+                    "Login successful! Redirecting...",
+                    "success"
+                );
+
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }, 800);
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                showMessage(
+                    error.message ||
+                    "Login failed. Please check your email and password.",
+                    "error"
+                );
+
+            } finally {
+
+                loginButton.disabled = false;
+
+                loginButton.textContent =
+                    "Login";
+
+            }
+
+        }
+    );
 
 </script>
 
 </body>
-  </html>
+</html>
