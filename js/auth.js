@@ -6,10 +6,10 @@
 // Replace the two values below with YOUR OWN
 // Supabase Project URL and Publishable Key.
 
-const SUPABASE_URL = "PASTE_YOUR_PROJECT_URL_HERE";
+const SUPABASE_URL = "https://fkvhsnnysaqwmxyqvfdu.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-    "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+    "sb_publishable_FAN3K80_lRR6etXaaTtpdQ_eVbsWNz3";
 
 
 // Create Supabase client
