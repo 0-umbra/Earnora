@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Earnora — Complete Tasks. Earn Rewards.</title>
 
-<meta name="description" content="Earnora is a rewards platform where users can complete simple tasks and earn points for rewards.">
+<meta name="description" content="Earnora is a rewards platform where users complete simple tasks and earn points for available rewards.">
 
 <style>
     * {
@@ -12,14 +12,20 @@
         box-sizing: border-box;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #0b0614;
+        background: #050505;
         color: #ffffff;
         min-height: 100vh;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
         width: 100%;
@@ -27,188 +33,406 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #11091f;
-        border-bottom: 1px solid #2a1742;
+
+        background: rgba(5, 5, 5, 0.94);
+        border-bottom: 1px solid #222222;
+
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
     }
 
     .logo {
-        font-size: 26px;
-        font-weight: 800;
-        color: #b96cff;
+        font-size: 27px;
+        font-weight: 900;
         letter-spacing: 1px;
+        color: #ffffff;
+    }
+
+    .logo span {
+        color: #e53935;
     }
 
     .nav-buttons {
         display: flex;
+        align-items: center;
         gap: 10px;
     }
 
     .nav-buttons a {
         text-decoration: none;
         color: #ffffff;
-        padding: 10px 16px;
+
+        padding: 10px 17px;
+
         border-radius: 8px;
-        border: 1px solid #3b2159;
+        border: 1px solid #333333;
+
         font-size: 14px;
+        font-weight: 600;
+
+        transition: 0.2s ease;
     }
 
     .nav-buttons a:hover {
-        background: #241137;
+        border-color: #555555;
+        background: #151515;
     }
 
     .signup {
-        background: #8f3cff;
-        border-color: #8f3cff !important;
+        background: #e53935 !important;
+        border-color: #e53935 !important;
     }
 
     .signup:hover {
-        background: #a957ff !important;
+        background: #ff4743 !important;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
         min-height: 78vh;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         text-align: center;
-        padding: 70px 20px;
+
+        padding: 80px 20px;
+
         background:
-            radial-gradient(circle at top, #291044 0%, #0b0614 55%);
+            radial-gradient(
+                circle at 20% 20%,
+                rgba(229, 57, 53, 0.16),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 80% 35%,
+                rgba(30, 136, 229, 0.15),
+                transparent 32%
+            ),
+            #050505;
     }
 
     .hero-content {
-        max-width: 800px;
+        max-width: 850px;
+    }
+
+    .badge {
+        display: inline-block;
+
+        padding: 8px 15px;
+        margin-bottom: 22px;
+
+        border: 1px solid #333333;
+        border-radius: 50px;
+
+        background: #111111;
+        color: #cccccc;
+
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .badge span {
+        color: #1e88e5;
     }
 
     .hero h1 {
-        font-size: clamp(42px, 8vw, 76px);
-        line-height: 1.05;
-        margin-bottom: 20px;
+        font-size: clamp(43px, 8vw, 78px);
+        line-height: 1.04;
+
+        margin-bottom: 22px;
+
+        font-weight: 900;
+        letter-spacing: -2px;
     }
 
-    .hero h1 span {
-        color: #b96cff;
+    .hero h1 .red {
+        color: #e53935;
+    }
+
+    .hero h1 .blue {
+        color: #1e88e5;
     }
 
     .hero p {
-        color: #c8bdd4;
+        color: #bdbdbd;
+
         font-size: 18px;
         line-height: 1.7;
-        max-width: 650px;
+
+        max-width: 680px;
         margin: auto;
     }
 
     .hero-buttons {
-        margin-top: 32px;
+        margin-top: 34px;
+
         display: flex;
         justify-content: center;
         gap: 14px;
+
         flex-wrap: wrap;
     }
 
     .primary-button,
     .secondary-button {
         display: inline-block;
-        padding: 14px 24px;
+
+        padding: 14px 25px;
+
         border-radius: 10px;
+
         text-decoration: none;
-        font-weight: bold;
+
+        font-weight: 700;
+
+        transition: 0.2s ease;
     }
 
     .primary-button {
-        background: #8f3cff;
-        color: white;
+        background: #e53935;
+        color: #ffffff;
+
+        box-shadow: 0 8px 30px rgba(229, 57, 53, 0.18);
     }
 
     .primary-button:hover {
-        background: #a957ff;
+        background: #ff4743;
+        transform: translateY(-2px);
     }
 
     .secondary-button {
-        border: 1px solid #543275;
-        color: white;
-        background: #160c25;
+        background: #101010;
+        color: #ffffff;
+
+        border: 1px solid #333333;
     }
 
     .secondary-button:hover {
-        background: #241137;
+        background: #181818;
+        border-color: #1e88e5;
+        color: #5aa9ff;
     }
 
-    /* FEATURES */
+    /* =========================
+       FEATURES
+    ========================= */
 
     .features {
-        padding: 70px 7%;
-        background: #0e0818;
+        padding: 80px 7%;
+
+        background: #090909;
+
+        border-top: 1px solid #1b1b1b;
     }
 
     .section-title {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 45px;
     }
 
     .section-title h2 {
-        font-size: 32px;
-        margin-bottom: 10px;
+        font-size: 34px;
+        margin-bottom: 12px;
     }
 
     .section-title p {
-        color: #a99db5;
+        color: #999999;
     }
 
     .feature-grid {
         display: grid;
+
         grid-template-columns: repeat(3, 1fr);
+
         gap: 20px;
+
         max-width: 1100px;
+
         margin: auto;
     }
 
     .feature-card {
-        background: #160d24;
-        border: 1px solid #2e1a45;
-        padding: 30px 24px;
+        background: #111111;
+
+        border: 1px solid #242424;
+
+        padding: 32px 25px;
+
         border-radius: 16px;
+
         text-align: center;
+
+        transition: 0.25s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: #333333;
     }
 
     .feature-icon {
-        font-size: 38px;
-        margin-bottom: 18px;
+        width: 60px;
+        height: 60px;
+
+        margin: 0 auto 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 15px;
+
+        background: #181818;
+
+        font-size: 28px;
+    }
+
+    .feature-card:nth-child(1) .feature-icon {
+        border: 1px solid rgba(229, 57, 53, 0.45);
+    }
+
+    .feature-card:nth-child(2) .feature-icon {
+        border: 1px solid rgba(30, 136, 229, 0.45);
+    }
+
+    .feature-card:nth-child(3) .feature-icon {
+        border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .feature-card h3 {
-        margin-bottom: 10px;
+        margin-bottom: 11px;
+        font-size: 20px;
     }
 
     .feature-card p {
-        color: #aaa0b5;
+        color: #999999;
+
         line-height: 1.6;
+
         font-size: 14px;
     }
 
-    /* FOOTER */
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+        padding: 65px 7%;
+
+        background: #050505;
+
+        border-top: 1px solid #1b1b1b;
+    }
+
+    .stats-grid {
+        max-width: 1000px;
+        margin: auto;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .stat {
+        padding: 20px;
+    }
+
+    .stat h3 {
+        font-size: 30px;
+        margin-bottom: 7px;
+    }
+
+    .stat:nth-child(1) h3 {
+        color: #e53935;
+    }
+
+    .stat:nth-child(2) h3 {
+        color: #1e88e5;
+    }
+
+    .stat:nth-child(3) h3 {
+        color: #ffffff;
+    }
+
+    .stat p {
+        color: #888888;
+        font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+        padding: 90px 20px;
+
+        text-align: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(229, 57, 53, 0.08),
+                rgba(30, 136, 229, 0.08)
+            ),
+            #090909;
+
+        border-top: 1px solid #1c1c1c;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        color: #999999;
+        margin-bottom: 28px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
         text-align: center;
-        padding: 28px 20px;
-        background: #08040e;
-        border-top: 1px solid #21132f;
-        color: #80758b;
+
+        padding: 30px 20px;
+
+        background: #030303;
+
+        border-top: 1px solid #1b1b1b;
+
+        color: #707070;
+
         font-size: 13px;
     }
 
-    /* MOBILE */
+    footer strong {
+        color: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 750px) {
 
         header {
-            padding: 16px 5%;
+            padding: 15px 5%;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 23px;
         }
 
         .nav-buttons a {
@@ -217,8 +441,12 @@
         }
 
         .hero {
-            min-height: 70vh;
-            padding: 60px 20px;
+            min-height: 72vh;
+            padding: 65px 20px;
+        }
+
+        .hero h1 {
+            letter-spacing: -1px;
         }
 
         .hero p {
@@ -229,29 +457,49 @@
             grid-template-columns: 1fr;
         }
 
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
         .features {
-            padding: 55px 5%;
+            padding: 65px 5%;
+        }
+
+        .cta h2 {
+            font-size: 30px;
         }
     }
 </style>
 
-</head><body><!-- HEADER -->
+</head><body><!-- =========================
+     HEADER
+========================== -->
 
 <header>
 
     <div class="logo">
-        Earnora
+        Earn<span>ora</span>
     </div>
 
     <div class="nav-buttons">
-        <a href="#">Login</a>
-        <a href="#" class="signup">Sign Up</a>
+
+        <a href="#">
+            Login
+        </a>
+
+        <a href="#" class="signup">
+            Sign Up
+        </a>
+
     </div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================== -->
 
 <main>
 
@@ -259,18 +507,24 @@
 
         <div class="hero-content">
 
+            <div class="badge">
+                <span>●</span> Earn points. Redeem rewards.
+            </div>
+
             <h1>
                 Complete Tasks.<br>
-                <span>Earn Rewards.</span>
+                <span class="red">Earn</span>
+                <span class="blue">Rewards.</span>
             </h1>
 
             <p>
-                Welcome to Earnora — a rewards platform where you can
-                complete simple tasks, collect points and redeem available
-                rewards.
+                Welcome to Earnora — complete simple tasks,
+                collect points and use your points to request
+                available rewards.
             </p>
 
             <div class="hero-buttons">
+
                 <a href="#" class="primary-button">
                     Get Started
                 </a>
@@ -278,6 +532,7 @@
                 <a href="#how-it-works" class="secondary-button">
                     How It Works
                 </a>
+
             </div>
 
         </div>
@@ -285,16 +540,20 @@
     </section>
 
 
-    <!-- FEATURES -->
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
 
     <section class="features" id="how-it-works">
 
         <div class="section-title">
 
-            <h2>How Earnora Works</h2>
+            <h2>
+                How Earnora Works
+            </h2>
 
             <p>
-                A simple way to turn completed tasks into rewards.
+                Three simple steps to get started.
             </p>
 
         </div>
@@ -304,13 +563,17 @@
 
             <div class="feature-card">
 
-                <div class="feature-icon">📝</div>
+                <div class="feature-icon">
+                    📝
+                </div>
 
-                <h3>Complete Tasks</h3>
+                <h3>
+                    Complete Tasks
+                </h3>
 
                 <p>
-                    Choose available tasks and complete them according
-                    to their requirements.
+                    Choose available tasks and complete
+                    them according to their requirements.
                 </p>
 
             </div>
@@ -318,13 +581,17 @@
 
             <div class="feature-card">
 
-                <div class="feature-icon">⭐</div>
+                <div class="feature-icon">
+                    ⭐
+                </div>
 
-                <h3>Earn Points</h3>
+                <h3>
+                    Earn Points
+                </h3>
 
                 <p>
-                    Successfully completed tasks can add points to
-                    your Earnora account.
+                    Successfully completed tasks can add
+                    points to your Earnora account.
                 </p>
 
             </div>
@@ -332,13 +599,17 @@
 
             <div class="feature-card">
 
-                <div class="feature-icon">🎁</div>
+                <div class="feature-icon">
+                    🎁
+                </div>
 
-                <h3>Redeem Rewards</h3>
+                <h3>
+                    Redeem Rewards
+                </h3>
 
                 <p>
-                    Use your points to request available rewards when
-                    you reach the required amount.
+                    Use your points to request available
+                    rewards when you reach the required amount.
                 </p>
 
             </div>
@@ -347,16 +618,90 @@
 
     </section>
 
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <section class="stats">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+
+                <h3>
+                    100%
+                </h3>
+
+                <p>
+                    Simple to use
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3>
+                    24/7
+                </h3>
+
+                <p>
+                    Access your account
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3>
+                    🎁
+                </h3>
+
+                <p>
+                    Rewards system
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to get started?
+        </h2>
+
+        <p>
+            Create your Earnora account and start completing tasks.
+        </p>
+
+        <a href="#" class="primary-button">
+            Create Account
+        </a>
+
+    </section>
+
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
 
-    © 2026 Earnora. All rights reserved.
+    © 2026 <strong>Earnora</strong>. All rights reserved.
 
 </footer>
 
 </body>
-  </html>
+</html>
